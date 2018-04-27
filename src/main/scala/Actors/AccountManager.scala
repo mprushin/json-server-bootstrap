@@ -1,4 +1,6 @@
-import AccountManager.{RequestAccountCreation, RequestAccountOperation, RequestAccountValue}
+package Actors
+
+import Actors.AccountManager.{RequestAccountCreation, RequestAccountOperation, RequestAccountValue}
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
 
 object AccountManager {
@@ -16,9 +18,9 @@ class AccountManager extends Actor with ActorLogging {
   var idToAccount = Map.empty[Int, ActorRef]
   var accountToId = Map.empty[ActorRef, Int]
 
-  override def preStart(): Unit = log.info("AccountManager started")
+  override def preStart(): Unit = log.info("Actors.AccountManager started")
 
-  override def postStop(): Unit = log.info("AccountManager stopped")
+  override def postStop(): Unit = log.info("Actors.AccountManager stopped")
 
   override def receive: Receive = {
     case trackMsg@RequestAccountValue(accountId) =>

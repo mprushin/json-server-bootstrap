@@ -1,8 +1,9 @@
+import Actors.{Account, AccountManager}
 import akka.actor.ActorSystem
 import akka.testkit.{TestKit, TestProbe}
 import org.scalatest.{BeforeAndAfterAll, FlatSpecLike, Matchers}
-import scala.concurrent.duration._
 
+import scala.concurrent.duration._
 
 class AccountSpec(_system: ActorSystem) extends TestKit(_system)
   with Matchers
